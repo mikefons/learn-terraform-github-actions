@@ -35,7 +35,7 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   tags = {
-    Name = "github4"
+    Name = "github5"
   }
 
   user_data = <<-EOF
