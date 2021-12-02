@@ -12,7 +12,7 @@ terraform {
   required_version = ">= 0.14"
 
   backend "remote" {
-    organization = "REPLACE_ME"
+    organization = "mfonseca-org"
 
     workspaces {
       name = "gh-actions-demo"
@@ -33,6 +33,10 @@ resource "aws_instance" "web" {
   ami                    = "ami-830c94e3"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
+
+  tags = {
+    Name = "github5"
+  }
 
   user_data = <<-EOF
               #!/bin/bash
